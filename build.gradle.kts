@@ -9,161 +9,126 @@ plugins {
 
 project.version = scmVersion.version
 
-allprojects {
-    apply(plugin = "idea")
-    apply(plugin = "java")
-    apply(plugin = "jacoco")
-    apply(plugin = "checkstyle")
-    apply(plugin = "com.diffplug.spotless")
-    apply(plugin = "com.github.spotbugs")
+apply(plugin = "idea")
+apply(plugin = "java")
+apply(plugin = "jacoco")
+apply(plugin = "checkstyle")
+apply(plugin = "com.diffplug.spotless")
+apply(plugin = "com.github.spotbugs")
+apply(plugin = "maven-publish")
 
-    group = "org.creek"
+group = "org.creek"
 
+java {
+    withSourcesJar()
+
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
+
+repositories {
+    mavenCentral()
+}
+
+extra.apply {
+    set("spotBugsVersion", "4.4.2")         // https://mvnrepository.com/artifact/com.github.spotbugs/spotbugs-annotations
+
+    set("guavaVersion", "31.0.1-jre")       // https://mvnrepository.com/artifact/com.google.guava/guava
+    set("log4jVersion", "2.14.1")           // https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core
+
+    set("junitVersion", "5.8.1")            // https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api
+    set("junitPioneerVersion", "1.4.2")     // https://mvnrepository.com/artifact/org.junit-pioneer/junit-pioneer
+    set("mockitoVersion", "4.0.0")          // https://mvnrepository.com/artifact/org.mockito/mockito-junit-jupiter
+    set("hamcrestVersion", "2.2")           // https://mvnrepository.com/artifact/org.hamcrest/hamcrest-core
+}
+
+val guavaVersion : String by extra
+val log4jVersion : String by extra
+val junitVersion: String by extra
+val junitPioneerVersion: String by extra
+val mockitoVersion: String by extra
+val hamcrestVersion : String by extra
+
+dependencies {
+    testImplementation("org.junit.jupiter:junit-jupiter-api:$junitVersion")
+    testImplementation("org.junit.jupiter:junit-jupiter-params:$junitVersion")
+    testImplementation("org.junit-pioneer:junit-pioneer:$junitPioneerVersion")
+    testImplementation("org.mockito:mockito-junit-jupiter:$mockitoVersion")
+    testImplementation("org.hamcrest:hamcrest-core:$hamcrestVersion")
+    testImplementation("com.google.guava:guava-testlib:$guavaVersion")
+    testImplementation("org.apache.logging.log4j:log4j-api:$log4jVersion")
+    testImplementation("org.apache.logging.log4j:log4j-core:$log4jVersion")
+    testImplementation("org.apache.logging.log4j:log4j-slf4j18-impl:$log4jVersion")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitVersion")
+}
+
+tasks.compileJava {
+    options.compilerArgs.add("-Xlint:all,-serial")
+    options.compilerArgs.add("-Werror")
+}
+
+tasks.test {
+    useJUnitPlatform()
+    setForkEvery(1)
+    maxParallelForks = 4
+    testLogging {
+        showStandardStreams = true
+        exceptionFormat = org.gradle.api.tasks.testing.logging.TestExceptionFormat.FULL
+        showCauses = true
+        showExceptions = true
+        showStackTraces = true
+    }
+}
+
+spotless {
     java {
-        withSourcesJar()
-
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
-    }
-
-    repositories {
-        mavenCentral()
+        googleJavaFormat("1.12.0").aosp()
+        indentWithSpaces()
+        importOrder()
+        removeUnusedImports()
+        trimTrailingWhitespace()
+        endWithNewline()
     }
 }
 
-subprojects {
-    apply(plugin = "maven-publish")
-
-    project.version = project.parent?.version!!
-
-    extra.apply {
-        set("spotBugsVersion", "4.4.2")         // https://mvnrepository.com/artifact/com.github.spotbugs/spotbugs-annotations
-
-        set("guavaVersion", "31.0.1-jre")       // https://mvnrepository.com/artifact/com.google.guava/guava
-        set("log4jVersion", "2.14.1")           // https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core
-
-        set("junitVersion", "5.8.1")            // https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api
-        set("junitPioneerVersion", "1.4.2")     // https://mvnrepository.com/artifact/org.junit-pioneer/junit-pioneer
-        set("mockitoVersion", "4.0.0")          // https://mvnrepository.com/artifact/org.mockito/mockito-junit-jupiter
-        set("hamcrestVersion", "2.2")           // https://mvnrepository.com/artifact/org.hamcrest/hamcrest-core
-    }
-
-    val guavaVersion : String by extra
-    val log4jVersion : String by extra
-    val junitVersion: String by extra
-    val junitPioneerVersion: String by extra
-    val mockitoVersion: String by extra
-    val hamcrestVersion : String by extra
-
-    dependencies {
-        testImplementation("org.junit.jupiter:junit-jupiter-api:$junitVersion")
-        testImplementation("org.junit.jupiter:junit-jupiter-params:$junitVersion")
-        testImplementation("org.junit-pioneer:junit-pioneer:$junitPioneerVersion")
-        testImplementation("org.mockito:mockito-junit-jupiter:$mockitoVersion")
-        testImplementation("org.hamcrest:hamcrest-core:$hamcrestVersion")
-        testImplementation("com.google.guava:guava-testlib:$guavaVersion")
-        testImplementation("org.apache.logging.log4j:log4j-api:$log4jVersion")
-        testImplementation("org.apache.logging.log4j:log4j-core:$log4jVersion")
-        testImplementation("org.apache.logging.log4j:log4j-slf4j18-impl:$log4jVersion")
-        testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitVersion")
-    }
-
-    tasks.compileJava {
-        options.compilerArgs.add("-Xlint:all,-serial")
-        options.compilerArgs.add("-Werror")
-    }
-
-    tasks.test {
-        useJUnitPlatform()
-        setForkEvery(1)
-        maxParallelForks = 4
-        testLogging {
-            showStandardStreams = true
-            exceptionFormat = org.gradle.api.tasks.testing.logging.TestExceptionFormat.FULL
-            showCauses = true
-            showExceptions = true
-            showStackTraces = true
+spotbugs {
+    tasks.spotbugsMain {
+        reports.create("html") {
+            isEnabled = true
+            setStylesheet("fancy-hist.xsl")
         }
     }
-
-    spotless {
-        java {
-            googleJavaFormat("1.12.0").aosp()
-            indentWithSpaces()
-            importOrder()
-            removeUnusedImports()
-            trimTrailingWhitespace()
-            endWithNewline()
+    tasks.spotbugsTest {
+        reports.create("html") {
+            isEnabled = true
+            setStylesheet("fancy-hist.xsl")
         }
-    }
-
-    spotbugs {
-        tasks.spotbugsMain {
-            reports.create("html") {
-                isEnabled = true
-                setStylesheet("fancy-hist.xsl")
-            }
-        }
-        tasks.spotbugsTest {
-            reports.create("html") {
-                isEnabled = true
-                setStylesheet("fancy-hist.xsl")
-            }
-        }
-    }
-
-    tasks.jacocoTestReport {
-        dependsOn(tasks.test)
-    }
-
-    tasks.jar {
-        archiveBaseName.set("creek-${project.name}")
-    }
-
-    configure<PublishingExtension> {
-        publications {
-            create<MavenPublication>("maven") {
-                from(components["java"])
-                artifactId = "creek-${project.name}"
-            }
-        }
-    }
-
-    tasks.register("format") {
-        dependsOn("spotlessCheck", "spotlessApply")
-    }
-
-    tasks.register("static") {
-        dependsOn("checkstyleMain", "checkstyleTest", "spotbugsMain", "spotbugsTest")
     }
 }
 
-val coverage = tasks.register<JacocoReport>("coverage") {
+tasks.jacocoTestReport {
+    dependsOn(tasks.test)
+}
+
+configure<PublishingExtension> {
+    publications {
+        create<MavenPublication>("maven") {
+            from(components["java"])
+        }
+    }
+}
+
+tasks.register("format") {
+    dependsOn("spotlessCheck", "spotlessApply")
+}
+
+tasks.register("static") {
+    dependsOn("checkstyleMain", "checkstyleTest", "spotbugsMain", "spotbugsTest")
+}
+
+tasks.register("coverage") {
     group = "coverage"
-    description = "Generates an aggregate code coverage report from all subprojects"
-
-    val coverageReportTask = this
-
-    // If a subproject applies the 'jacoco' plugin, add the result it to the report
-    subprojects {
-        val subproject = this
-        subproject.plugins.withType<JacocoPlugin>().configureEach {
-            subproject.tasks.matching({ it.extensions.findByType<JacocoTaskExtension>() != null }).configureEach {
-                val coverageSubTask = this
-                sourceSets(subproject.sourceSets.main.get())
-                executionData(coverageSubTask)
-            }
-
-            subproject.tasks.matching({ it.extensions.findByType<JacocoTaskExtension>() != null }).forEach {
-                coverageReportTask.dependsOn(it)
-            }
-        }
-    }
-
-    reports {
-        xml.required.set(true)
-        html.required.set(true)
-    }
+    dependsOn("jacocoTestReport")
 }
 
 coveralls {
@@ -175,7 +140,7 @@ tasks.coveralls {
     group = "coverage"
     description = "Uploads the aggregated coverage report to Coveralls"
 
-    dependsOn(coverage)
+    dependsOn("coverage")
     onlyIf{System.getenv("CI") != null}
 }
 
