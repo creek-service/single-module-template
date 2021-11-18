@@ -131,11 +131,6 @@ tasks.register("coverage") {
     dependsOn("jacocoTestReport")
 }
 
-coveralls {
-    sourceDirs = subprojects.flatMap{it.sourceSets.main.get().allSource.srcDirs}.map{it.toString()}
-    jacocoReportPath = "$buildDir/reports/jacoco/coverage/coverage.xml"
-}
-
 tasks.coveralls {
     group = "coverage"
     description = "Uploads the aggregated coverage report to Coveralls"

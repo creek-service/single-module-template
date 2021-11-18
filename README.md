@@ -44,7 +44,7 @@ The template sets up the following:
 4. Customise the files in the new repo:
     1. Replace the `single-module-template` repo name with the name of the new project.
        Each place is marked with a `ChangeMe` comment.
-    2. Replace the [`example`](example) module with the repos first module.
+    2. Replace the [example code](src/main/java/org/creek/example) with some initial code.
     3. Replace this README.md
     4. Commit changes as a PR (so you can test the PR build works!)
 5. Finish customising the repo in GitHub `Settings`->`Branches` and protect the `main` branch:
