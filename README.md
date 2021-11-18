@@ -1,33 +1,32 @@
-<!-- ChangeMe: replace /multi-module-template in the badge urls below with the name of the repo-->
+<!-- ChangeMe: replace /single-module-template in the badge urls below with the name of the repo-->
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![build](https://github.com/creek-service/multi-module-template/actions/workflows/gradle.yml/badge.svg)](https://github.com/creek-service/multi-module-template/actions/workflows/gradle.yml)
-[![Coverage Status](https://coveralls.io/repos/github/creek-service/multi-module-template/badge.svg?branch=main)](https://coveralls.io/github/creek-service/multi-module-template?branch=main)
+[![build](https://github.com/creek-service/single-module-template/actions/workflows/gradle.yml/badge.svg)](https://github.com/creek-service/single-module-template/actions/workflows/gradle.yml)
+[![Coverage Status](https://coveralls.io/repos/github/creek-service/single-module-template/badge.svg?branch=main)](https://coveralls.io/github/creek-service/single-module-template?branch=main)
 
-# Multi-module template Repo
-Template repo used to create other multi-module repos.
+# single-module template Repo
+Template repo used to create other single-module repos.
 
 ## Features
 
 The template sets up the following:
 
-* Multi-module Gradle Java project, including:
-  * [Spotless][1] (code formatting)
-  * [Spotbugs][2] (static code analysis)
-  * [Checkstyle][3] (static code analysis)
-  * [Axion-release][4] (release versioning)
-  * [Jacoco][5] (code coverage analysis)
-  * [Coveralls.io][6] (code coverage tracking)
-  * Default set of test dependencies:
-    * [Unit5][7]
-    * [Mockito][8]
-    * [Hamcrest][9]
-    * [Guava TestLib][10]
-    * [Log4J 2.x][11]
-* Github build workflow, including:
-  * Gradle build
-  * [Coveralls.io][6] reporting
-  * Release versioning
-* Github code owners and PR template.
+* Single-module Gradle Java project, including:
+    * Code formatting by [Spotless][1]
+    * Static code analysis by [Spotbugs][2] and [Checkstyle][3]
+    * Release versioning by the [Axion-release-plugin][4]
+    * Code coverage analysis by [Jacoco][5]
+    * Code coverage tracking by [Coveralls.io][6]
+    * Default set of test dependencies:
+        * [Unit5][7]
+        * [Mockito][8]
+        * [Hamcrest][9]
+        * [Guava TestLib][10]
+        * [Log4J 2.x][11]
+* GitHub build workflow, including:
+    * Gradle build
+    * [Coveralls.io][6] reporting
+    * Release versioning
+* GitHub code owners and PR template.
 
 ## Usage
 
@@ -43,7 +42,7 @@ The template sets up the following:
    2. `Secrets`->:
       1. Add a new repository secret called `COVERALLS_REPO_TOKEN`, grabbing the value from Coveralls.io.,
 4. Customise the files in the new repo:
-    1. Replace the `multi-module-template` repo name with the name of the new project.
+    1. Replace the `single-module-template` repo name with the name of the new project.
        Each place is marked with a `ChangeMe` comment.
     2. Replace the [`example`](example) module with the repos first module.
     3. Replace this README.md
