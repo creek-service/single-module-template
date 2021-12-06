@@ -64,7 +64,7 @@ The template sets up the following:
 * `./gradlew format` will format the code using [Spotless][1].
 * `./gradlew static` will run static code analysis, i.e. [Spotbugs][2] and [Checkstyle][3].
 * `./gradlew check` will run all checks and tests.
-* `./gradlew coverage` will generate a cross-module [Jacoco][5] coverage report.
+* `./gradlew coverage` will generate a [Jacoco][5] coverage report.
 
 [1]: https://github.com/diffplug/spotless
 [2]: https://spotbugs.github.io/
