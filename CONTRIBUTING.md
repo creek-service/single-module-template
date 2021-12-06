@@ -27,7 +27,7 @@ Contribution welcome!
 
 ## Submit Changes
 
-* Before submitting run `./gradlew format check`:
+* Before submitting run `./gradlew` to run the default `format`, `static` and `check` tasks.
   * Running `./gradlew format` will ensure the code is correctly formatted. 
   * Running `./gradlew static` will run static code analysis.
   * Running `./gradlew test` will run all the tests.
