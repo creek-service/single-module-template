@@ -59,6 +59,8 @@ val mockitoVersion: String by extra
 val hamcrestVersion : String by extra
 
 dependencies {
+    testImplementation("org.creek:creek-test-hamcrest:+")
+    testImplementation("org.creek:creek-test-util:+")
     testImplementation("org.junit.jupiter:junit-jupiter-api:$junitVersion")
     testImplementation("org.junit.jupiter:junit-jupiter-params:$junitVersion")
     testImplementation("org.junit-pioneer:junit-pioneer:$junitPioneerVersion")
