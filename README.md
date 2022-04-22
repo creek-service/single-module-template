@@ -1,7 +1,8 @@
 <!-- ChangeMe: replace /single-module-template in the badge urls below with the name of the repo-->
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![build](https://github.com/creek-service/single-module-template/actions/workflows/gradle.yml/badge.svg)](https://github.com/creek-service/single-module-template/actions/workflows/gradle.yml)
 [![Coverage Status](https://coveralls.io/repos/github/creek-service/single-module-template/badge.svg?branch=main)](https://coveralls.io/github/creek-service/single-module-template?branch=main)
+[![build](https://github.com/creek-service/single-module-template/actions/workflows/gradle.yml/badge.svg)](https://github.com/creek-service/single-module-template/actions/workflows/gradle.yml)
+[![CodeQL](https://github.com/creek-service/single-module-template/actions/workflows/codeql.yml/badge.svg)](https://github.com/creek-service/single-module-template/actions/workflows/codeql.yml)
 
 # single-module template Repo
 Template repo used to create other single-module repos.
@@ -39,7 +40,9 @@ The template sets up the following:
       1. `Merge Button`: 
          1. un-tick: `Allow merge commits` and `Allow rebase merging`.
          2. tick: `Allow auto-merging` and `Automatically delete head branches`
-   2. `Secrets`->:
+   2. `Collaborators and teams`->
+      1. `Manage access`: add `code-reviews` team with `Triage` role.
+   3. `Secrets`->:
       1. Add a new repository secret called `COVERALLS_REPO_TOKEN`, grabbing the value from Coveralls.io.,
 4. Customise the files in the new repo:
     1. Replace the `single-module-template` repo name with the name of the new project.
@@ -54,7 +57,10 @@ The template sets up the following:
        1. With `Require approvals` set to 1.
     2. Tick `Require statuc checks to pass before merging`
        1. With `Require branches to be up to date before merging`
-       2. With status checks `build` and `coverage/coveralls`.
+       2. With status checks:
+          * `build`
+          * `codeQL`
+          * `coverage/coveralls`
 6. Finish customising the repo in Coveralls.io `Settings`->`Pull Request Alerts`:
    1. Tick `Leave comments`
    2. Set `COVERAGE THRESHOLD FOR FAILURE` to `80`%
