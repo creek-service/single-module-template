@@ -41,7 +41,7 @@ The template sets up the following:
          1. un-tick: `Allow merge commits` and `Allow rebase merging`.
          2. tick: `Allow auto-merging` and `Automatically delete head branches`
    2. `Collaborators and teams`->
-      1. `Manage access`: add `code-reviews` team with `Triage` role.
+      1. `Manage access`: add `code-reviews` team with the `Write` role.
    3. `Secrets`->:
       1. Add a new repository secret called `COVERALLS_REPO_TOKEN`, grabbing the value from Coveralls.io.,
 4. Customise the files in the new repo:
