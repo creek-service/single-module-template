@@ -1,5 +1,5 @@
 /*
- * Copyright 2021-2022 Creek Contributors (https://github.com/creek-service)
+ * Copyright 2022 Creek Contributors (https://github.com/creek-service)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,17 +14,16 @@
  * limitations under the License.
  */
 
-package org.creek.internal.example;
+package org.creekservice;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.is;
 
+import org.creekservice.api.test.conformity.ConformityTester;
 import org.junit.jupiter.api.Test;
 
-class ExampleImplTest {
+class ModuleTest {
 
     @Test
-    void shouldReturnTrue() {
-        assertThat(ExampleImpl.getTrue(), is(true));
+    void shouldConform() {
+        ConformityTester.test(ModuleTest.class);
     }
 }

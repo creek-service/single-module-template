@@ -47,7 +47,7 @@ The template sets up the following:
 4. Customise the files in the new repo:
     1. Replace the `single-module-template` repo name with the name of the new project.
        Each place is marked with a `ChangeMe` comment.
-    2. Replace the [example api](src/main/java/org/creek/api/example) with some initial code.
+    2. Replace the [example api](src/main/java/org/creekservice/api/example) with some initial code.
     3. Replace the `creek.template.module.single` module name with a suitable module name.
       Each place is marked with a `ChangeMe` comment.
     4. Replace this README.md
