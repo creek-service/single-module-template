@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.creek.internal.example;
+package org.creekservice.internal.example;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;

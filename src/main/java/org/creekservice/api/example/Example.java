@@ -14,15 +14,6 @@
  * limitations under the License.
  */
 
-package org.creek.internal.example;
+package org.creekservice.api.example;
 
-
-import org.creek.api.example.Example;
-
-public final class ExampleImpl implements Example {
-    private ExampleImpl() {}
-
-    public static boolean getTrue() {
-        return true;
-    }
-}
+public interface Example {}
