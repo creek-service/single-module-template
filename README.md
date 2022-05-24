@@ -43,7 +43,8 @@ The template sets up the following:
    2. `Collaborators and teams`->
       1. `Manage access`: add `code-reviews` team with the `Write` role.
    3. `Secrets`->:
-      1. Add a new repository secret called `COVERALLS_REPO_TOKEN`, grabbing the value from Coveralls.io.,
+      1. `Actions`-> Add a new repository secret called `COVERALLS_REPO_TOKEN`, grabbing the value from Coveralls.io.,
+      2. `Dependabot`-> Add the same `COVERALLS_REPO_TOKEN` repository secret here too
 4. Customise the files in the new repo:
     1. Replace the `single-module-template` repo name with the name of the new project.
        Each place is marked with a `ChangeMe` comment.
