@@ -41,6 +41,10 @@ repositories {
     }
 }
 
+configurations.all {
+    resolutionStrategy.cacheChangingModulesFor(10, TimeUnit.MINUTES)
+}
+
 extra.apply {
     set("creekBaseVersion", "0.2.0-SNAPSHOT")
     set("creekTestVersion", "0.2.0-SNAPSHOT")
