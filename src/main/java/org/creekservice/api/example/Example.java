@@ -16,4 +16,5 @@
 
 package org.creekservice.api.example;
 
+/** Example type */
 public interface Example {}
