@@ -23,7 +23,9 @@ import org.creekservice.api.example.Example;
 public final class ExampleImpl implements Example {
     private ExampleImpl() {}
 
-    /** @return {@code true} */
+    /**
+     * @return {@code true}
+     */
     public static boolean getTrue() {
         return true;
     }
