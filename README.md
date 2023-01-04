@@ -3,6 +3,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/creek-service/single-module-template/badge.svg?branch=main)](https://coveralls.io/github/creek-service/single-module-template?branch=main)
 [![build](https://github.com/creek-service/single-module-template/actions/workflows/build.yml/badge.svg)](https://github.com/creek-service/single-module-template/actions/workflows/build.yml)
 [![CodeQL](https://github.com/creek-service/single-module-template/actions/workflows/codeql.yml/badge.svg)](https://github.com/creek-service/single-module-template/actions/workflows/codeql.yml)
+[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/creek-service/single-module-template/badge)](https://api.securityscorecards.dev/projects/github.com/creek-service/single-module-template)
 
 # single-module template Repo
 Template repo used to create other single-module repos.
