@@ -24,7 +24,7 @@ public final class ExampleImpl implements Example {
 
     /**
      * Example method.
-     * 
+     *
      * @return {@code true}.
      */
     public static boolean getTrue() {
