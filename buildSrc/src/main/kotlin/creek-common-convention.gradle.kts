@@ -69,7 +69,7 @@ configurations.all {
     resolutionStrategy.cacheChangingModulesFor(15, TimeUnit.MINUTES)
 }
 
-tasks.compileJava {
+tasks.withType<JavaCompile> {
     options.compilerArgs.add("-Xlint:all,-serial,-requires-automatic,-requires-transitive-automatic,-module")
     options.compilerArgs.add("-Werror")
 }
