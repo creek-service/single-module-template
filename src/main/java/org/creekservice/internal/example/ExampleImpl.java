@@ -23,7 +23,9 @@ public final class ExampleImpl implements Example {
     private ExampleImpl() {}
 
     /**
-     * @return hardcoded to return {@code true}.
+     * Example method.
+     * 
+     * @return {@code true}.
      */
     public static boolean getTrue() {
         return true;
