@@ -2,8 +2,10 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Coverage Status](https://coveralls.io/repos/github/creek-service/single-module-template/badge.svg?branch=main)](https://coveralls.io/github/creek-service/single-module-template?branch=main)
 [![build](https://github.com/creek-service/single-module-template/actions/workflows/build.yml/badge.svg)](https://github.com/creek-service/single-module-template/actions/workflows/build.yml)
-<!-- ChangeMe: replace 'single-module-template-example' below with name of one published module in this repo -->
+<!-- ChangeMe: replace 'single-module-template-example' below with name of this repo -->
 [![Maven Central](https://img.shields.io/maven-central/v/org.creekservice/single-module-template-example.svg)](https://central.sonatype.dev/search?q=single-module-template-*)
+<!-- ChangeMe: replace 'single-module-template-example' below with name of this repo -->
+[![javadoc](https://javadoc.io/badge2/org.creekservice/single-module-template/javadoc.svg)](https://javadoc.io/doc/org.creekservice/single-module-template)
 [![CodeQL](https://github.com/creek-service/single-module-template/actions/workflows/codeql.yml/badge.svg)](https://github.com/creek-service/single-module-template/actions/workflows/codeql.yml)
 [![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/creek-service/single-module-template/badge)](https://api.securityscorecards.dev/projects/github.com/creek-service/single-module-template)
 [![OpenSSF Best Practices](https://bestpractices.coreinfrastructure.org/projects/6899/badge)](https://bestpractices.coreinfrastructure.org/projects/6899)
