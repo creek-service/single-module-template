@@ -22,7 +22,7 @@ plugins {
     `creek-coverage-convention`
     `creek-publishing-convention`
     `creek-sonatype-publishing-convention`
-    id("pl.allegro.tech.build.axion-release") version "1.17.2" // https://plugins.gradle.org/plugin/pl.allegro.tech.build.axion-release
+    id("pl.allegro.tech.build.axion-release") version "1.18.2" // https://plugins.gradle.org/plugin/pl.allegro.tech.build.axion-release
 }
 
 project.version = scmVersion.version
@@ -39,7 +39,7 @@ val log4jVersion = "2.23.1"           // https://mvnrepository.com/artifact/org.
 val junitVersion = "5.10.3"            // https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api
 val junitPioneerVersion = "2.2.0"     // https://mvnrepository.com/artifact/org.junit-pioneer/junit-pioneer
 val mockitoVersion = "5.12.0"          // https://mvnrepository.com/artifact/org.mockito/mockito-junit-jupiter
-val hamcrestVersion = "2.2"           // https://mvnrepository.com/artifact/org.hamcrest/hamcrest-core
+val hamcrestVersion = "3.0"           // https://mvnrepository.com/artifact/org.hamcrest/hamcrest-core
 
 dependencies {
     testImplementation("org.creekservice:creek-test-hamcrest:$creekVersion")
