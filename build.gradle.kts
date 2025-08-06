@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 Creek Contributors (https://github.com/creek-service)
+ * Copyright 2023-2025 Creek Contributors (https://github.com/creek-service)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,6 @@ val log4jVersion = "2.25.1"           // https://mvnrepository.com/artifact/org.
 val junitVersion = "5.13.4"            // https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api
 val junitPioneerVersion = "2.3.0"     // https://mvnrepository.com/artifact/org.junit-pioneer/junit-pioneer
 val mockitoVersion = "5.18.0"          // https://mvnrepository.com/artifact/org.mockito/mockito-junit-jupiter
-val hamcrestVersion = "3.0"           // https://mvnrepository.com/artifact/org.hamcrest/hamcrest-core
 
 dependencies {
     testImplementation("org.creekservice:creek-test-hamcrest:$creekVersion")
@@ -49,9 +48,7 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter-params:$junitVersion")
     testImplementation("org.junit-pioneer:junit-pioneer:$junitPioneerVersion")
     testImplementation("org.mockito:mockito-junit-jupiter:$mockitoVersion")
-    testImplementation("org.hamcrest:hamcrest-core:$hamcrestVersion")
     testImplementation("com.google.guava:guava-testlib:$guavaVersion")
-    testImplementation("org.apache.logging.log4j:log4j-core:$log4jVersion")
     testImplementation("org.apache.logging.log4j:log4j-slf4j2-impl:$log4jVersion")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitVersion")
 }
