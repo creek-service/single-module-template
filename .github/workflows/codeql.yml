@@ -11,7 +11,6 @@ permissions:
 
 jobs:
   analyze:
-    name: Analyze
     if: ${{ github.run_number != 1 }}
     runs-on: ubuntu-latest
     permissions:
@@ -33,6 +32,9 @@ jobs:
         with:
           languages: ${{ matrix.language }}
 
+      - name: Fetch version history
+        run: git fetch --tag --unshallow
+
       - name: Set up JDK
         uses: actions/setup-java@c5195efecf7bdfc987ee8bae7a71cb8b11521c00 # v4.7.1
         with:
@@ -40,7 +42,7 @@ jobs:
           distribution: 'adopt'
 
       - name: Setup Gradle
-        uses: gradle/gradle-build-action@ac2d340dc04d9e1113182899e983b5400c17cda1 # v3.5.0
+        uses: gradle/actions/setup-gradle@017a9effdb900e5b5b2fddfb590a105619dca3c3 # v4.4.2
         with:
           gradle-home-cache-cleanup: true
 
