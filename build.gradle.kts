@@ -34,11 +34,11 @@ allprojects {
 }
 
 val creekVersion = "0.4.4-SNAPSHOT"
-val guavaVersion = "33.4.8-jre"         // https://mvnrepository.com/artifact/com.google.guava/guava
-val log4jVersion = "2.25.1"           // https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core
+val guavaVersion = "33.5.0-jre"         // https://mvnrepository.com/artifact/com.google.guava/guava
+val log4jVersion = "2.25.2"           // https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core
 val junitVersion = "5.13.4"            // https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api
 val junitPioneerVersion = "2.3.0"     // https://mvnrepository.com/artifact/org.junit-pioneer/junit-pioneer
-val mockitoVersion = "5.19.0"          // https://mvnrepository.com/artifact/org.mockito/mockito-junit-jupiter
+val mockitoVersion = "5.20.0"          // https://mvnrepository.com/artifact/org.mockito/mockito-junit-jupiter
 
 dependencies {
     testImplementation("org.creekservice:creek-test-hamcrest:$creekVersion")
