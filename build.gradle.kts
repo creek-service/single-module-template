@@ -22,7 +22,7 @@ plugins {
     `creek-coverage-convention`
     `creek-publishing-convention`
     `creek-sonatype-publishing-convention`
-    id("pl.allegro.tech.build.axion-release") version "1.21.1" // https://plugins.gradle.org/plugin/pl.allegro.tech.build.axion-release
+    id("pl.allegro.tech.build.axion-release") version "1.21.2" // https://plugins.gradle.org/plugin/pl.allegro.tech.build.axion-release
 }
 
 project.version = scmVersion.version
@@ -36,7 +36,7 @@ allprojects {
 val creekVersion = "0.4.4"
 val guavaVersion = "33.6.0-jre"         // https://mvnrepository.com/artifact/com.google.guava/guava
 val log4jVersion = "2.26.0"           // https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core
-val junitVersion = "6.1.0"            // https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api
+val junitVersion = "6.1.1"            // https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api
 val junitPioneerVersion = "2.3.0"     // https://mvnrepository.com/artifact/org.junit-pioneer/junit-pioneer
 val mockitoVersion = "5.23.0"          // https://mvnrepository.com/artifact/org.mockito/mockito-junit-jupiter
 
