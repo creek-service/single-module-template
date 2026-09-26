@@ -33,12 +33,12 @@ allprojects {
     }
 }
 
-val creekVersion = "0.4.4"
-val guavaVersion = "33.7.1-jre"         // https://mvnrepository.com/artifact/com.google.guava/guava
-val log4jVersion = "2.26.1"           // https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core
-val junitVersion = "6.1.3"            // https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api
-val junitPioneerVersion = "2.3.0"     // https://mvnrepository.com/artifact/org.junit-pioneer/junit-pioneer
-val mockitoVersion = "5.23.0"          // https://mvnrepository.com/artifact/org.mockito/mockito-junit-jupiter
+val creekVersion: String by project
+val guavaVersion: String by project
+val log4jVersion: String by project
+val junitVersion: String by project
+val junitPioneerVersion: String by project
+val mockitoVersion: String by project
 
 dependencies {
     testImplementation("org.creekservice:creek-test-hamcrest:$creekVersion")
